@@ -14,7 +14,7 @@ echo $ROOT_PATH
 PI_GEN="$ROOT_PATH/pi-gen"
 PI_GEN_UTILS="$ROOT_PATH/pi-gen-utils"
 
-PI_GEN_CONFIG_DIR="moode"
+PI_GEN_CONFIG_DIR="moode-cfg"
 
 # This var is used by pi-gen-utils script as the pi-gen dir
 PP=$PI_GEN
