@@ -1,4 +1,4 @@
-#/!/usrbin/bash
+#!/usr/bin/bash
 #########################################################################
 #
 # Generate moode audio player image
@@ -43,14 +43,16 @@ function prepare_environment {
 }
 
 # setup build environment by checkout pi-gen and pi-gen-utils
+echo "Prepare environment:"
 prepare_environment
 
 # Setup correct config for pi-gen
-# cd moode-base
+echo "Set build config:"
 cd $PI_GEN_CONFIG_DIR
 $PI_GEN_UTILS/setuppigen.sh
 rm -f $PI_GEN/stage2/EXPORT_NOOBS || true
 
 # Perform image build
 cd $PI_GEN
+echo "Starting build:"
 sudo ./build.sh
