@@ -1,6 +1,3 @@
-[submodule "pi-gen-utils"]
-	path = pi-gen-utils
-	url = https://github.com/bitkeeper/pi-gen-utils.git
 [submodule "pi-gen"]
 	path = pi-gen
 	url = https://github.com/RPi-Distro/pi-gen.git
