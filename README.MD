@@ -26,7 +26,7 @@ The output will be:
 
 At the moment of writing the zip will be just around the 1GB, with an img file of arround 3.3GB.
 
-It is located in the subdir `dist`.
+It is located in the subdir `deploy`.
 
 The build is based on top of Raspberry Pi Lite Bullseye in combination with the specific moode packages from the moode [pkgbuild](https://github.com/moode-player/pkgbuild) project.
 The build the latest available packages of Bullseye will be used.
@@ -40,13 +40,25 @@ THe [pi-gen-utils](https://github.com/FrancisTurner/pi-gen-utils) project is use
 
 important files:
 * config - contains general config
-* stage2_04-moode-install-prereq_00-run-chroot.sh - prepare for install, like setting up the moode repo
-* stage2_05-moode-install_01-packages - packages that should be installed on top the lite distribution, deps of the mentioned packages are automatic installed
-* stage2_06-moode-install-post_00-run-chroot.sh - post steps like locking important packages
+* stage2_05-moode-install_01-packages - packages that should be installed on top the lite distribution, but aren't build by moode. Like nginx, php.
 
-There is also a second cfg dir `moode-base-cfg` this one is used to generated moode image with everything expect the moode-player it self.
-This makes it easier to test clean systems during development.
+* stage3_0-moode-install-prereq_00-run-chroot.sh - prepare for install, like setting up the moode repo
+* stage3_01-moode-install_01-packages - packages that should be installed on top the lite distribution, deps of the mentioned packages are automatic installed
+* stage3_02-moode-install-post_00-run-chroot.sh - install rpi-update kernel, kernel drivers and configure apt-mark hold pacakges
 
+### Configure used moode packages
+
+In the file `moode-cfg/stage3_01-moode-install_01-packages` contains an explicit list of important moode packages. All those would be installed as dep from `moode-player`, but by listing those here we ahve the possiblity to explicit set the version that should be used.
+
+When an new version of moode should released also the used version in this file should be set correctly.
+### Configure used kernel
+
+At the moment of write a rpi-update kernel in used (non deb).
+The rpi-kernel to use can be configured in `moode-cfg/stage3_02-moode-install-post_00-run-chroot.sh`
+
+### Configure moode image version
+
+This can be set in `moode-cfg/config`.
 ## Performing the build
 
 Run from the root of the project
@@ -54,4 +66,4 @@ Run from the root of the project
 ./build.sh
 ```
 
-Expect somewhere around the 35+ minutes of a Raspberry Pi 4 4GB (with NFS network storage).
+Expect somewhere around the 40+ minutes of a Raspberry Pi 4 4GB (with NFS network storage).
