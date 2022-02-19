@@ -49,8 +49,11 @@ prepare_environment
 # Setup correct config for pi-gen
 echo "Set build config:"
 cd $PI_GEN_CONFIG_DIR
-$PI_GEN_UTILS/setuppigen.sh
 rm -f $PI_GEN/stage2/EXPORT_NOOBS || true
+rm -f $PI_GEN/stage3/EXPORT_NOOBS || true
+rm -rf $PI_GEN/stage3/00-install-packages || true
+rm -rf $PI_GEN/stage3/01-tweaks || true
+$PI_GEN_UTILS/setuppigen.sh
 
 # Perform image build
 cd $PI_GEN
