@@ -1,3 +1,17 @@
+# Mac OS resource fork files
+._*
+.Trashes
+._.Trashes
+.Spotlight*
+.DS_Store
+._.DS_Store
+.fseventsd*
+._.com.apple.timemachine.donotpresent
+.com.apple.timemachine.donotpresent
+.TemporaryItems
+._.TemporaryItems
+__MACOSX
+# Other
 bak
 work
 deploy
