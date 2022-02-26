@@ -1,11 +1,17 @@
 #!/bin/bash
-
+#########################################################################
+#
+# Generate moode audio player image
+#
+# (C) bitkeeper 2022 http://moodeaudio.org
+# License: GPLv3
+#
+#########################################################################
 
 # kernel hashes for rpi-update
 # 5.15.24 77451e601cbee4835b04ccf2d583c53be6e21454
 # 5.15.23 9e99d81910722b6f2e086f6d14e592f292bcbb8b
 # 5.15.21 fbcab73d5a20f592aa9f6b0e364757ef131dae27
-
 
 # Install kernel from rpi-update
 echo "y" | sudo PRUNE_MODULES=1 rpi-update 9e99d81910722b6f2e086f6d14e592f292bcbb8b

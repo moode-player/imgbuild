@@ -1,4 +1,13 @@
 #!/bin/bash
+#########################################################################
+#
+# Generate moode audio player image
+#
+# (C) bitkeeper 2022 http://moodeaudio.org
+# License: GPLv3
+#
+#########################################################################
+
 # echo "Installing cloudsmith repository"
 
 # Normal install will not work due Warning: apt-key is deprecated:
@@ -13,4 +22,3 @@ curl -fsSL 'https://dl.cloudsmith.io/public/moodeaudio/m8y/config.deb.txt?distro
 
 echo "Update package lists"
 apt-get update
-
