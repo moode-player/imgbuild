@@ -1,4 +1,4 @@
-IMG_NAME=moode-r800pre4
+IMG_NAME=moode-r800pre5
 RELEASE=bullseye
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8
