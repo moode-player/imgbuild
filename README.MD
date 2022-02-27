@@ -1,69 +1,63 @@
 # moOde audio player - image builder
 
-The moOde audio player imgbuild project generates a fully automated a custom Raspberry Pi OS image with the moOde audio player installed. The build is based on Raspberry Pi OS Lite (Bullseye) and generated with the [pi-gen](https://github.com/RPi-Distro/pi-gen).
-Unless you are developing a new moode image, you don't need to generate the image yourself, you can download a prebuild image from the [moode audio player](https://moodeaudio.org/) website.
+The image builder generates an optimized Raspberry Pi OS (RaspiOS)image with moOde audio player installed. The build is based on RaspiOS Lite Bullseye release and uses [pi-gen](https://github.com/RPi-Distro/pi-gen) to create the image.
+This build process is designed to generate moode images for development and testing purposes leading up to a final release image. The release image is available for download at the [moode audio player](https://moodeaudio.org/) website.
 
-The build will not alter the host system, so you if want you can running it from an existing system.
-If your system behaves a little strange after a build, just reboot an you will be fine.
+Note: The build process will not alter the host system and thus can run on any existing host that meets the requirements listed below. If the host system behaves a little strange after a build, just reboot and it should be fine.
 
 # The build
 ## Requirements
 
-* Debian/Ubuntu/Raspberry OS system (pi-gen should support builds on another architecture ).
-* At least 10GB free space
-  * If network storage is mounted is should be a linux friendly file system. No NTFS or SMB.
-* All the packages to install should be located:
-  * Offical Raspberry Pi OS bullseye repo
-  * The moode audio player repo
-* Internet connection, preferably via Ethernet
+* Debian, Ubuntu or RaspiOS based system (other architectures may be added)
+* At least 10GB of free disk space
+* Linux friendly file system (ext4, zfs, btrfs, xfs)
+* If a NAS is used for build output it should be mounted via NFS
+* All packages come from the following locations:
+  * Offical RaspiOS package repo
+  * moOde package build repo [pkgbuild](https://github.com/moode-player/pkgbuild)
+* The host used for the build should be connected via Ethernet for best download performance from the remote repos
 
+## Output
 
-## The output
+The output is located in the subdirectory `deploy` and contains the following files:
+* A zip file containing an image (.img) file
+* An information (.info) file which lists all installed packages and their version numbers
 
-The output will be:
-* An zip tha contains an img file.
-* An info file wich list all installed packages including version number.
-
-At the moment of writing the zip will be just around the 1GB, with an img file of arround 3.3GB.
-
-It is located in the subdir `deploy`.
-
-The build is based on top of Raspberry Pi Lite Bullseye in combination with the specific moode packages from the moode [pkgbuild](https://github.com/moode-player/pkgbuild) project.
-The build the latest available packages of Bullseye will be used.
-Make sure that moode driver packages are available for the used kernel.
+Notes:
+* The zip file is around 1GB in size and the image file is around 3.3GB
+* The latest packages are used from the RaspiOS Lite repo in combination with specific packages from the moOde package build repo
+* Make sure driver packages for moOde have been built for the particular kernel used in the image build
 
 ## Configuration
 
-The configuration files for the build can be found in the subdir `moode-cfg`.
+The configuration files for the build are located in the subdirectory `moode-cfg`. The [pi-gen-utils](https://github.com/FrancisTurner/pi-gen-utils) suite of utilities is used for making configuration easier.
 
-THe [pi-gen-utils](https://github.com/FrancisTurner/pi-gen-utils) project is used for making it easier to configure.
+## Important files:
+* config - Contains the general configuration
+* stage2_05-moode-install_01-packages - Packages that are installed onto RaspiOS but aren't built from the moOde package repo for example NGINX and PHP
+* stage2_04-moode-install-prereq_00-run-chroot.sh - Prepares for package install for example setting up the moOde repo
+* stage2_05-moode-install_01-packages - Packages that are installed on top the Lite distribution (Note: package dependencies are automaticly installed)
+* stage3_02-moode-install-post_00-run-chroot.sh - Install rpi-update kernel, kernel drivers and configures apt-mark hold pacakges
 
-important files:
-* config - contains general config
-* stage2_05-moode-install_01-packages - packages that should be installed on top the lite distribution, but aren't build by moode. Like nginx, php.
+### Configure version specific list of packages
 
-* stage3_0-moode-install-prereq_00-run-chroot.sh - prepare for install, like setting up the moode repo
-* stage3_01-moode-install_01-packages - packages that should be installed on top the lite distribution, deps of the mentioned packages are automatic installed
-* stage3_02-moode-install-post_00-run-chroot.sh - install rpi-update kernel, kernel drivers and configure apt-mark hold pacakges
+The file `moode-cfg/stage3_01-moode-install_01-packages` contains a list of packages and provides a way to specify the exact version of each package to be installed.
 
-### Configure used moode packages
+Note: The moode-player package is specified in this list so it's version should be verified before performing an image build.
 
-In the file `moode-cfg/stage3_01-moode-install_01-packages` contains an explicit list of important moode packages. All those would be installed as dep from `moode-player`, but by listing those here we ahve the possiblity to explicit set the version that should be used.
+### Configure kernel version to be used
 
-When an new version of moode should released also the used version in this file should be set correctly.
-### Configure used kernel
-
-At the moment of write a rpi-update kernel in used (non deb).
-The rpi-kernel to use can be configured in `moode-cfg/stage3_02-moode-install-post_00-run-chroot.sh`
+Currently an rpi-update kernel in used (non deb). The specific kernel to be used can be configured in `moode-cfg/stage3_02-moode-install-post_00-run-chroot.sh`
 
 ### Configure moode image version
 
-This can be set in `moode-cfg/config`.
+This can be set via the IMG_NAME parameter in the file `moode-cfg/config`.
+
 ## Performing the build
 
-Run from the root of the project
+Run the command below from the root directory of the imgbuild repo
 ```bash
 ./build.sh
 ```
 
-Expect somewhere around the 40+ minutes of a Raspberry Pi 4 4GB (with NFS network storage).
+A typical build takes around 40 minutes on a Raspberry Pi 4 4GB depending on network performance and download speed.
