@@ -60,4 +60,4 @@ Run the command below from the root directory of the imgbuild repo
 ./build.sh
 ```
 
-A typical build takes around 40 minutes on a Raspberry Pi 4 4GB depending on network performance and download speed.
+Build time varies depending on system and network performance. Typical build time on Pi-4B 1GB with a Class 10 SD Card and Ethernet connection is around 1 hour.
