@@ -41,6 +41,12 @@ function prepare_environment {
 
     git submodule init
     git submodule update
+
+    cat pi-gen/build.sh |grep "\-\-allow-downgrades" > /dev/null 2>&1
+    if [[ ! $? -eq 0 ]]
+    then
+        patch -p0 < ./pi-gen-allowdowngrades.patch
+    fi
 }
 
 # setup build environment by checkout pi-gen and pi-gen-utils

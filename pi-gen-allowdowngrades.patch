@@ -1,0 +1,22 @@
+diff --git a/build.sh b/build.sh
+index f743e2a..4072fa1 100755
+--- pi-gen.org/build.sh
++++ pi-gen/build.sh
+@@ -21,7 +21,7 @@ EOF
+ 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages-nr")"
+ 			if [ -n "$PACKAGES" ]; then
+ 				on_chroot << EOF
+-apt-get -o APT::Acquire::Retries=3 install --no-install-recommends -y $PACKAGES
++apt-get -o APT::Acquire::Retries=3 install --no-install-recommends --allow-downgrades -y $PACKAGES
+ EOF
+ 				if [ "${USE_QCOW2}" = "1" ]; then
+ 					on_chroot << EOF
+@@ -36,7 +36,7 @@ EOF
+ 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages")"
+ 			if [ -n "$PACKAGES" ]; then
+ 				on_chroot << EOF
+-apt-get -o APT::Acquire::Retries=3 install -y $PACKAGES
++apt-get -o APT::Acquire::Retries=3 install --allow-downgrades -y $PACKAGES
+ EOF
+ 				if [ "${USE_QCOW2}" = "1" ]; then
+ 					on_chroot << EOF
