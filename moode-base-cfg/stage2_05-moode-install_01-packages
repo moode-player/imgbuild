@@ -24,7 +24,6 @@ libmms0
 libzen0v5
 winbind
 libnss-winbind
-djmount
 haveged
 python3-pip
 xfsprogs
