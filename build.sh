@@ -12,7 +12,19 @@ ROOT_PATH=`pwd`
 
 echo $ROOT_PATH
 
-PI_GEN="$ROOT_PATH/pi-gen"
+uname -m | grep "64" > /dev/null
+if [[ $? -eq 0 ]]
+then
+  IS_ARM64=1
+fi
+echo "$IS_ARM64"
+
+if [ -z "$IS_ARM64" ]
+then
+    PI_GEN="$ROOT_PATH/pi-gen"
+else
+    PI_GEN="$ROOT_PATH/pi-gen-64"
+fi
 PI_GEN_UTILS="$ROOT_PATH/pi-gen-utils"
 
 PI_GEN_CONFIG_DIR="moode-cfg"
@@ -25,7 +37,7 @@ function prepare_environment {
     missing=0
     for i in "${array[@]}"
     do
-        dpkg -s $1 2>&1 | grep Status | grep "installed" > /dev/null 2>&1
+        dpkg -s $i 2>&1 | grep Status | grep "installed" > /dev/null 2>&1
         if [[ ! $? -eq 0 ]]
         then
             missing=1
@@ -42,10 +54,12 @@ function prepare_environment {
     git submodule init
     git submodule update
 
-    cat pi-gen/build.sh |grep "\-\-allow-downgrades" > /dev/null 2>&1
+    cat $PI_GEN/build.sh |grep "\-\-allow-downgrades" > /dev/null 2>&1
     if [[ ! $? -eq 0 ]]
     then
-        patch -p0 < ./pi-gen-allowdowngrades.patch
+        cd $PI_GEN
+        patch -p1 < ../pi-gen-allowdowngrades.patch
+        cd ..
     fi
 }
 
@@ -60,7 +74,12 @@ rm -f $PI_GEN/stage2/EXPORT_NOOBS || true
 rm -f $PI_GEN/stage3/EXPORT_NOOBS || true
 rm -rf $PI_GEN/stage3/00-install-packages || true
 rm -rf $PI_GEN/stage3/01-tweaks || true
-$PI_GEN_UTILS/setuppigen.sh
+$PI_GEN_UTILS/setuppigen.sh $PI_GEN
+
+if [ -n "$IS_ARM64" ]
+then
+    sed -i "s/IMG_NAME[=]\(.*\)/IMG_NAME=\1-arm64/" $PI_GEN/config
+fi
 
 # Perform image build
 cd $PI_GEN
