@@ -78,3 +78,8 @@ python3-dbus
 python3-musicpd
 expect
 runonce
+fonts-arphic-ukai
+fonts-arphic-uming
+fonts-ipafont-mincho
+fonts-ipafont-gothic
+fonts-unfonts-core

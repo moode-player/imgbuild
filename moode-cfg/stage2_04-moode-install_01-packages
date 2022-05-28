@@ -7,6 +7,11 @@ exfat-fuse
 expect
 ffmpeg
 flac
+fonts-arphic-ukai
+fonts-arphic-uming
+fonts-ipafont-mincho
+fonts-ipafont-gothic
+fonts-unfonts-core
 haveged
 hostapd
 id3v2
