@@ -1,4 +1,4 @@
-IMG_NAME=moode-r810pre1
+IMG_NAME=moode-r810pre2
 RELEASE=bullseye
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8
