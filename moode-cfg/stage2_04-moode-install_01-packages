@@ -53,6 +53,7 @@ smbclient
 sqlite3
 squashfs-tools
 sysstat
+systemd-timesyncd
 telnet
 triggerhappy
 winbind
