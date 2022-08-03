@@ -31,6 +31,7 @@ libsgutils2-2
 libtool-bin
 libzen0v5
 lsb-release
+nfs-kernel-server
 nginx
 nmap
 ntfs-3g
