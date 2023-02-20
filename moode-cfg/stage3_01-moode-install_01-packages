@@ -4,7 +4,7 @@
 # The deps of moode-player are automatic installed
 # But by mentioning those explicit we can set an exact version
 #
-moode-player=8.2.5-1moode1
+moode-player=8.3.0-1moode1~pre1
 alsa-cdsp=1.2.0-1moode1
 alsacap=1.0.1-1moode1
 ashuffle=3.12.8-1moode1
