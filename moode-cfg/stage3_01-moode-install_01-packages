@@ -4,10 +4,11 @@
 # The deps of moode-player are automatic installed
 # But by mentioning those explicit we can set an exact version
 #
-moode-player=8.3.9-1moode1
+# TODO: add moode-player package
+# moode-player=9.0.0-1moode1~pre1
 alsa-cdsp=1.2.0-1moode1
 alsacap=1.0.1-1moode1
-ashuffle=3.12.8-1moode1
+ashuffle=3.14.1-1moode1
 bluez-alsa-utils=4.1.0-2moode2
 boss2-oled-p3=1.0.0-1moode1
 camilladsp=2.0.1-1moode1
