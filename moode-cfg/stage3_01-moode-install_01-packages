@@ -4,7 +4,7 @@
 # The deps of moode-player are automatic installed
 # But by mentioning those explicit we can set an exact version
 #
-moode-player=8.3.7-1moode1
+moode-player=8.3.8-1moode1~pre1
 alsa-cdsp=1.2.0-1moode1
 alsacap=1.0.1-1moode1
 ashuffle=3.12.8-1moode1
@@ -26,7 +26,7 @@ python3-libupnpp=0.21.0-1moode1
 python3-mpd2=3.0.5
 runonce=0.1.0-1moode1
 shairport-sync=4.3.2-1moode1
-squeezelite=1.9+git20210102.78fef68-3moode1
+squeezelite=1.9.9-1449+git20230814.8581aba-1moode1
 trx=0.6-1moode1
 udisks-glue=1.3.5-1moode3
 udisks=1.0.5-1moode1
