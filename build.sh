@@ -6,6 +6,10 @@
 # (C) bitkeeper 2022 http://moodeaudio.org
 # License: GPLv3
 #
+# 2023:
+# updated for bookworm
+# auto depend install from depends file
+#
 #########################################################################
 
 ROOT_PATH=`pwd`
@@ -22,8 +26,10 @@ echo "$IS_ARM64"
 if [ -z "$IS_ARM64" ]
 then
     PI_GEN="$ROOT_PATH/pi-gen"
+    echo "building 32 bit"
 else
     PI_GEN="$ROOT_PATH/pi-gen-64"
+    echo "building 64 bit"
 fi
 PI_GEN_UTILS="$ROOT_PATH/pi-gen-utils"
 
@@ -33,22 +39,34 @@ PI_GEN_CONFIG_DIR="moode-cfg"
 PP=$PI_GEN
 
 function prepare_environment {
-    array=( git coreutils quilt parted qemu-user-static debootstrap zerofree zip dosfstools libcap2-bin grep rsync xz-utils file git curl bc libarchive-tools qemu-utils kpartx )
+    # read deps for this build and strip categories
+    readarray -t DEPENDS <  $PI_GEN/depends
+    count=0
+    for d in "${DEPENDS[@]}"
+    do
+    DEPENDS["$count"]=`echo $d | cut -d ":" -f2`
+    count=$((count + 1))
+    done
+    echo ${DEPENDS[@]}
+
+    # check if present
     missing=0
-    for i in "${array[@]}"
+    for i in "${DEPENDS[@]}"
     do
         dpkg -s $i 2>&1 | grep Status | grep "installed" > /dev/null 2>&1
         if [[ ! $? -eq 0 ]]
         then
+            echo "missing $i"
             missing=1
             break
         fi
 
     done
 
+    #if not install the deps
     if [ $missing -eq 1 ]
     then
-        sudo apt-get -y install coreutils quilt parted qemu-user-static debootstrap zerofree zip dosfstools libcap2-bin grep rsync xz-utils file git curl bc libarchive-tools qemu-utils kpartx
+        echo ${DEPENDS[@]} | xargs sudo apt-get -y install
     fi
 
     git submodule init

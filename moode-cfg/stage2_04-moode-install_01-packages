@@ -27,7 +27,7 @@ libgudev-1.0-0
 libmediainfo0v5
 libmms0
 libnss-winbind
-libsgutils2-2
+# libsgutils2
 libtool-bin
 libzen0v5
 lsb-release
@@ -38,7 +38,7 @@ ntfs-3g
 php-fpm
 php-sqlite3
 php-yaml
-php7.4-gd
+php8.2-gd
 pi-bluetooth
 python3-dbus
 python3-matplotlib
@@ -58,7 +58,8 @@ systemd-timesyncd
 telnet
 triggerhappy
 winbind
+wayfire
 xfsprogs
-xinit
-xorg
+# xinit
+# xorg
 zip
