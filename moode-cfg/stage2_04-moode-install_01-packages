@@ -1,7 +1,7 @@
 avahi-utils
 bs2b-ladspa
 chromium-browser
-dnsmasq
+# dnsmasq
 dos2unix
 exfat-fuse
 expect
@@ -12,8 +12,8 @@ fonts-arphic-uming
 fonts-ipafont-mincho
 fonts-ipafont-gothic
 fonts-unfonts-core
-haveged
-hostapd
+# haveged
+# hostapd
 id3v2
 inotify-tools
 libasound2-plugin-equal
