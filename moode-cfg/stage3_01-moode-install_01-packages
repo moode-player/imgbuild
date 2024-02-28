@@ -4,8 +4,7 @@
 # The deps of moode-player are automatic installed
 # But by mentioning those explicit we can set an exact version
 #
-# TODO: add moode-player package
-# moode-player=9.0.0-1moode1~pre1
+moode-player=9.0.0-1moode1~pre1
 alsa-cdsp=1.2.0-1moode1
 alsacap=1.0.1-1moode1
 ashuffle=3.14.1-1moode1
@@ -15,7 +14,7 @@ camilladsp=2.0.1-1moode1
 camillagui=2.0.0-1moode1
 caps=0.9.26-1moode1
 libasound2-plugin-bluez=4.1.0-2moode2
-libnpupnp2=5.0.1-1moode1
+libnpupnp2=5.1.0-1moode1
 librespot=0.4.2-1moode1
 libupnpp7=0.22.4-1moode1
 mpd=0.23.14-1moode1
