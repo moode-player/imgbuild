@@ -1,6 +1,3 @@
-[submodule "pi-gen"]
-	path = pi-gen
-	url = https://github.com/RPi-Distro/pi-gen.git
 [submodule "pi-gen-64"]
 	path = pi-gen-64
 	url = https://github.com/RPi-Distro/pi-gen.git
