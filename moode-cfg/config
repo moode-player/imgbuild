@@ -1,4 +1,4 @@
-IMG_NAME=moode-r900~pre1
+IMG_NAME=moode-dev-r900~pre1
 RELEASE=bookworm
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8

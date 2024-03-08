@@ -17,20 +17,15 @@ ROOT_PATH=`pwd`
 echo $ROOT_PATH
 
 uname -m | grep "64" > /dev/null
-if [[ $? -eq 0 ]]
+if [[ $? -eq 1 ]]
 then
-  IS_ARM64=1
+  echo "Support for building 32bits is removed"
+  exit 1
 fi
-echo "$IS_ARM64"
 
-if [ -z "$IS_ARM64" ]
-then
-    PI_GEN="$ROOT_PATH/pi-gen"
-    echo "building 32 bit"
-else
-    PI_GEN="$ROOT_PATH/pi-gen-64"
-    echo "building 64 bit"
-fi
+PI_GEN="$ROOT_PATH/pi-gen-64"
+echo "building 64 bit"
+
 PI_GEN_UTILS="$ROOT_PATH/pi-gen-utils"
 
 PI_GEN_CONFIG_DIR="moode-cfg"
@@ -88,16 +83,10 @@ prepare_environment
 # Setup correct config for pi-gen
 echo "Set build config:"
 cd $PI_GEN_CONFIG_DIR
-rm -f $PI_GEN/stage2/EXPORT_NOOBS || true
-rm -f $PI_GEN/stage3/EXPORT_NOOBS || true
 rm -rf $PI_GEN/stage3/00-install-packages || true
-rm -rf $PI_GEN/stage3/01-tweaks || true
 $PI_GEN_UTILS/setuppigen.sh $PI_GEN
 
-if [ -n "$IS_ARM64" ]
-then
-    sed -i "s/IMG_NAME[=]\(.*\)/IMG_NAME=\1-arm64/" $PI_GEN/config
-fi
+sed -i "s/IMG_NAME[=]\(.*\)/IMG_NAME=\1-arm64/" $PI_GEN/config
 
 # Perform image build
 cd $PI_GEN
