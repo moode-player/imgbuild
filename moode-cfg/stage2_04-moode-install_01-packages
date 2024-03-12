@@ -1,7 +1,6 @@
 avahi-utils
 bs2b-ladspa
 chromium-browser
-# dnsmasq
 dos2unix
 exfat-fuse
 expect
@@ -12,8 +11,6 @@ fonts-arphic-uming
 fonts-ipafont-mincho
 fonts-ipafont-gothic
 fonts-unfonts-core
-# haveged
-# hostapd
 id3v2
 inotify-tools
 libasound2-plugin-equal
@@ -27,7 +24,6 @@ libgudev-1.0-0
 libmediainfo0v5
 libmms0
 libnss-winbind
-# libsgutils2
 libtool-bin
 libzen0v5
 lsb-release
@@ -60,6 +56,6 @@ triggerhappy
 winbind
 wayfire
 xfsprogs
-# xinit
-# xorg
+xinit
+xorg
 zip
