@@ -54,7 +54,8 @@ systemd-timesyncd
 telnet
 triggerhappy
 winbind
-wayfire
+# wayfire
+wsdd
 xfsprogs
 xinit
 xorg
