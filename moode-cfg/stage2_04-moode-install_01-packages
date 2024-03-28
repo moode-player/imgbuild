@@ -1,3 +1,7 @@
+################################################################################
+# Note the moode-player package defines the deps but we need to mirror them here
+################################################################################
+
 avahi-utils
 bs2b-ladspa
 chromium-browser

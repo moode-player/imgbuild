@@ -1,9 +1,11 @@
-# List of moode-player package to install in stage 3, concerns mainly own build versions of packages
-# This list is exluding the kernel depended drivers, those are installed in stage3/02.
+################################################################################
+# List of specific moode-player packages to install in stage3 excluding kernel
+# drivers which are installed in stage3/02.
 #
-# The deps of moode-player are automatic installed
-# But by mentioning those explicit we can set an exact version
-#
+# Note the moode-player package defines the deps but not by specific version so
+# by mentioning these explicitly here we can set an exact version.
+################################################################################
+
 moode-player=9.0.0-1moode1~pre2
 alsa-cdsp=1.2.0-1moode1
 alsacap=1.0.1-1moode1
