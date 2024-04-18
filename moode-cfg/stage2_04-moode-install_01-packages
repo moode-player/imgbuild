@@ -1,19 +1,19 @@
 ################################################################################
-# Note the moode-player package defines the deps but we can mirror them here
+# Note: moode-player pkg defines the deps but we can mirror the non-CS ones here
 ################################################################################
 
-alsa-cdsp
-alsacap
-ashuffle
+# alsa-cdsp
+# alsacap
+# ashuffle
 avahi-utils
 bluez
 bluez-tools
 bluez-alsa-utils
 bluez-firmware
-boss2-oled-p3
+# boss2-oled-p3
 bs2b-ladspa
-camilladsp
-camillagui
+# camilladsp
+# camillagui
 caps
 chromium-browser
 dos2unix
@@ -41,7 +41,7 @@ libgudev-1.0-0
 libmediainfo0v5
 libmms0
 libnss-winbind
-librespot
+# librespot
 libsgutils2-1.46-2
 libtool-bin
 libzen0v5
@@ -50,7 +50,7 @@ mediainfo
 minidlna
 mpc
 mpd
-mpd2cdspvolume
+# mpd2cdspvolume
 nfs-kernel-server
 nginx
 nmap
@@ -61,13 +61,13 @@ php-yaml
 php8.2-gd
 pi-bluetooth
 python3-dbus
-python3-libupnpp
+# python3-libupnpp
 python3-musicpd
 python3-pip
 python3-rpi.gpio
 python3-setuptools
 rpi-update
-runonce
+# runonce
 samba
 shairport-sync
 shellinabox
@@ -80,9 +80,9 @@ sysstat
 telnet
 triggerhappy
 trx
-udisks-glue
-upmpdcli
-upmpdcli-qobuz
+# udisks-glue
+# upmpdcli
+# upmpdcli-qobuz
 winbind
 wsdd
 xfsprogs
