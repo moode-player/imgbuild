@@ -6,8 +6,8 @@
 # by mentioning these explicitly here we can set an exact version.
 ################################################################################
 
-moode-player=9.0.0-1moode1~pre4
-alsa-cdsp=1.2.0-1moode1
+moode-player=9.0.0-1moode1~pre5
+alsa-cdsp=1.2.0-1moode2~d1
 alsacap=1.0.1-1moode1
 ashuffle=3.14.1-1moode1
 bluez-alsa-utils=4.1.0-2moode2
