@@ -7,7 +7,7 @@
 ################################################################################
 
 moode-player=9.0.0-1moode1~pre5
-alsa-cdsp=1.2.0-1moode1
+alsa-cdsp=1.2.0-1moode2
 alsacap=1.0.1-1moode1
 ashuffle=3.14.1-1moode1
 bluez-alsa-utils=4.1.0-2moode2
