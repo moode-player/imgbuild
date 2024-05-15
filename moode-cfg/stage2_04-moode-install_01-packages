@@ -83,7 +83,6 @@ trx
 # udisks-glue
 # upmpdcli
 # upmpdcli-qobuz
-# upmpdcli-tidal
 winbind
 wsdd
 xfsprogs
