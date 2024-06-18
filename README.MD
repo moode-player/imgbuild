@@ -45,6 +45,7 @@ It does not matter if the damage is caused by incorrect usage or a bug in the so
 * All packages come from the following locations:
   * Offical RaspiOS package repo
   * moOde package build repo [pkgbuild](https://github.com/moode-player/pkgbuild)
+  * acme.sh (https://github.com/acmesh-official/acme.sh)
 * The host used for the build should be connected via Ethernet for best download performance from the remote repos
 
 ## Output
