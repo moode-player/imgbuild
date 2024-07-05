@@ -27,6 +27,7 @@ fonts-ipafont-gothic
 fonts-ipafont-mincho
 fonts-unfonts-core
 fonts-unfonts-core
+fonts-lato
 id3v2
 inotify-tools
 libasound2-plugin-bluez
