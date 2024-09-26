@@ -46,7 +46,7 @@ libnss-winbind
 libsgutils2-1.46-2
 libtool-bin
 libzen0v5
-log2ram
+# log2ram
 lsb-release
 lsof
 mediainfo
