@@ -24,3 +24,10 @@ KERNEL_VERSION_PKG_SMALL=$(echo $KERNEL_PKG_VERSION | sed -r "s/[0-9]:([0-9][.][
 # Driver install
 echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
 apt-get install -y "aloop-$KERNEL_VERSION_PKG_SMALL" "pcm1794a-$KERNEL_VERSION_PKG_SMALL"
+
+# Chromium downgrade to v126
+echo "Downgrading chromium to v126"
+apt-mark unhold chromium chromium-browser chromium-common chromium-sandbox rpi-chromium-mods
+apt-get -y install chromium-browser=126.0.6478.164-rpt1 chromium-browser-l10n=126.0.6478.164-rpt1 chromium-codecs-ffmpeg-extra=126.0.6478.164-rpt1 --allow-downgrades --allow-change-held-packages
+apt-get -y purge chromium chromium-common chromium-sandbox rpi-chromium-mods
+apt-get -y autoremove
