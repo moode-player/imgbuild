@@ -1,9 +1,11 @@
 ################################################################################
-# List of specific moode-player packages to install in stage3 excluding kernel
-# drivers which are installed in stage3/02.
+# List of specific package versions to install excluding kernel drivers and
+# chromium-browser.
 #
-# Note the moode-player package defines the deps but not by specific version so
+# Note: the moode-player package defines the deps but not by specific version so
 # by mentioning these explicitly here we can set an exact version.
+# Note: Kernel drivers and chromium-browser are installed in the next stage.
+# stage3_02-moode-install-post_00-run-chroot.sh
 ################################################################################
 
 moode-player=9.2.0-1moode1
@@ -21,7 +23,7 @@ log2ram=1.7.2
 mpd=0.23.14-1moode1
 mpd2cdspvolume=1.0.0-1moode2
 nqptp=1.2.4-1moode1
-pleezer=0.5.0-1moode1
+pleezer=0.6.0-1moode1
 python3-camilladsp-plot=2.0.0-1moode1
 python3-camilladsp=2.0.0-1moode1
 python3-mpd2=3.0.5
