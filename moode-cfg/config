@@ -2,7 +2,7 @@
 # Base config
 ################################################################################
 
-IMG_NAME=moode-r922
+IMG_NAME=moode-r923
 RELEASE=bookworm
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8
