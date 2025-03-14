@@ -51,8 +51,8 @@ lsb-release
 lsof
 mediainfo
 minidlna
-mpc
-mpd
+# mpc
+# mpd
 # mpd2cdspvolume
 nfs-kernel-server
 nginx
