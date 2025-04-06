@@ -74,6 +74,7 @@ rpi-update
 # runonce
 samba
 shairport-sync
+shairport-sync-metadata-reader
 shellinabox
 smbclient
 sox
