@@ -14,7 +14,7 @@ bluez-firmware
 bs2b-ladspa
 # camilladsp
 # camillagui
-caps
+# caps
 chromium-browser
 dos2unix
 exfat-fuse
@@ -73,14 +73,14 @@ python3-setuptools
 rpi-update
 # runonce
 samba
-shairport-sync
-shairport-sync-metadata-reader
+# shairport-sync
+# shairport-sync-metadata-reader
 shellinabox
 smbclient
 sox
 sqlite3
 squashfs-tools
-squeezelite
+# squeezelite
 sysstat
 telnet
 tree
