@@ -8,7 +8,7 @@
 # stage3_02-moode-install-post_00-run-chroot.sh
 ################################################################################
 
-moode-player=9.3.2-1moode1
+moode-player=9.3.3-1moode1
 alsa-cdsp=1.2.0-2moode1
 alsacap=1.0.1-1moode1
 ashuffle=3.14.1-1moode1
