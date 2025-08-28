@@ -63,11 +63,13 @@ php-sqlite3
 php-yaml
 php8.2-gd
 pi-bluetooth
+# peppy-alsa
 # pleezer
 python3-dbus
 # python3-libupnpp
 python3-musicpd
 python3-pip
+python3-pygame
 python3-rpi.gpio
 python3-setuptools
 rpi-update
