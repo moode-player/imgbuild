@@ -64,6 +64,8 @@ php-yaml
 php8.2-gd
 pi-bluetooth
 # peppy-alsa
+# peppy-meter
+# peppy-spectrum
 # pleezer
 python3-dbus
 # python3-libupnpp
