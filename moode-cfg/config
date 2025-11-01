@@ -2,8 +2,8 @@
 # Base config
 ################################################################################
 
-IMG_NAME=moode-r942
-RELEASE=bookworm
+IMG_NAME=moode-r1000a1
+RELEASE=trixie
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8
 TARGET_HOSTNAME=moode
