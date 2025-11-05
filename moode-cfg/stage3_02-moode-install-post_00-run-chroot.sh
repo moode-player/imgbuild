@@ -31,16 +31,16 @@ KERNEL_VERSION_PKG_SMALL=$(echo $KERNEL_PKG_VERSION | sed -r "s/[0-9]:([0-9][.][
 
 # Driver install
 echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
-apt-get install -y "aloop-$KERNEL_VERSION_PKG_SMALL" "pcm1794a-$KERNEL_VERSION_PKG_SMALL"
+apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
 # Install chromium v126
 ################################################################################
 
-echo "Chromium, install v126"
-apt-get -y install chromium-browser=126.0.6478.164-rpt1 chromium-browser-l10n=126.0.6478.164-rpt1 chromium-codecs-ffmpeg-extra=126.0.6478.164-rpt1 --allow-downgrades
-apt-get -y purge chromium chromium-common chromium-sandbox rpi-chromium-mods
-apt-get -y autoremove
-echo "Chromium, apply package holds"
-apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
-apt-mark hold chromium chromium-common chromium-sandbox rpi-chromium-mods
+#echo "Chromium, install v126"
+#apt-get -y install chromium-browser=126.0.6478.164-rpt1 chromium-browser-l10n=126.0.6478.164-rpt1 chromium-codecs-ffmpeg-extra=126.0.6478.164-rpt1 --allow-downgrades
+#apt-get -y purge chromium chromium-common chromium-sandbox rpi-chromium-mods
+#apt-get -y autoremove
+#echo "Chromium, apply package holds"
+#apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
+#apt-mark hold chromium chromium-common chromium-sandbox rpi-chromium-mods

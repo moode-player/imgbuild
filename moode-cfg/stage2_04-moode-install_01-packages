@@ -15,7 +15,7 @@ bs2b-ladspa
 # camilladsp
 # camillagui
 # caps
-chromium-browser
+chromium
 dos2unix
 exfat-fuse
 expect
@@ -43,7 +43,7 @@ libmediainfo0v5
 libmms0
 libnss-winbind
 # librespot
-libsgutils2-1.46-2
+#libsgutils2-1.46-2
 libtool-bin
 libzen0v5
 # log2ram
@@ -61,7 +61,7 @@ ntfs-3g
 php-fpm
 php-sqlite3
 php-yaml
-php8.2-gd
+php8.4
 pi-bluetooth
 # peppy-alsa
 # peppy-meter
@@ -89,13 +89,12 @@ sysstat
 telnet
 tree
 triggerhappy
-trx
 # udisks-glue
 # upmpdcli
 # upmpdcli-qobuz
 # upmpdcli-tidal
 winbind
-wsdd
+wsdd2
 xfsprogs
 xinit
 xorg

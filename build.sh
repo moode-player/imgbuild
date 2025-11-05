@@ -9,6 +9,8 @@
 # 2023:
 # updated for bookworm
 # auto depend install from depends file
+# 2025:
+# updated for trixie
 #
 #########################################################################
 
