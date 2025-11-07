@@ -31,7 +31,7 @@ KERNEL_VERSION_PKG_SMALL=$(echo $KERNEL_PKG_VERSION | sed -r "s/[0-9]:([0-9][.][
 
 # Driver install
 echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
-apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL"
+apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
 # Install chromium v126

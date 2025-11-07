@@ -43,7 +43,7 @@ libmediainfo0v5
 libmms0
 libnss-winbind
 # librespot
-#libsgutils2-1.46-2
+# libsgutils2-1.46-2
 libtool-bin
 libzen0v5
 # log2ram
@@ -75,7 +75,6 @@ python3-pygame
 python3-rpi.gpio
 python3-setuptools
 rpi-update
-# runonce
 samba
 # shairport-sync
 # shairport-sync-metadata-reader
