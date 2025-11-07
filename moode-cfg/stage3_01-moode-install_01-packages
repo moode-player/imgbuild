@@ -1,11 +1,11 @@
 ################################################################################
-# List of specific package versions to install excluding kernel drivers and
-# chromium-browser.
+# List of specific package versions to install excluding the packages below
+# which are installed in stage3_02-moode-install-post_00-run-chroot.sh
+# - kernel drivers and
+# - specific version of chromium if needed
 #
 # Note: the moode-player package defines the deps but not by specific version so
 # by mentioning these explicitly here we can set an exact version.
-# Note: Kernel drivers and chromium-browser are installed in the next stage.
-# stage3_02-moode-install-post_00-run-chroot.sh
 ################################################################################
 
 moode-player=10.0.0-1moode1

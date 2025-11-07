@@ -43,7 +43,7 @@ libmediainfo0v5
 libmms0
 libnss-winbind
 # librespot
-# libsgutils2-1.46-2
+# libsgutils2-1.48 Note: dep is in moode-player build.sh
 libtool-bin
 libzen0v5
 # log2ram

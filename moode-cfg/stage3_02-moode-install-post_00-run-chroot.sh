@@ -34,7 +34,7 @@ echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
 apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
-# Install chromium v126
+# Install specific version of chromium if needed
 ################################################################################
 
 #echo "Chromium, install v126"
