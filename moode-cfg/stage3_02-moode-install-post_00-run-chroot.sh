@@ -34,6 +34,7 @@ echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
 apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
+# Moode10: Save in case needed in future
 # Install specific version of chromium if needed
 ################################################################################
 
@@ -43,4 +44,4 @@ apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSI
 #apt-get -y autoremove
 #echo "Chromium, apply package holds"
 #apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
-#apt-mark hold chromium chromium-common chromium-sandbox rpi-chromium-mods
+#apt-mark hold chromium chromium-common chromium-l10nchromium-sandbox rpi-chromium-mods
