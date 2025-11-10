@@ -4,10 +4,8 @@
 # Post moode install
 #
 # Install kernel drivers
-# - aloop     384 kHz patch Ok
-# - pcm1794a  384 kHz patch Ok
-# - ax88179   Removed due to breakage in 6.1.yy, unmaintained by vendor (Allo)
-# - rtl88xxau Removed due to breakage in 6.6.31, unmaintained by Git repo owner
+# - pcm1794a  384 kHz patch
+# - rtl88xxau For Comfast CF-912AC
 #
 # Downgrade chromium
 # - Install version 126.0.6478.164-rpt1
@@ -34,7 +32,7 @@ echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
 apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
-# Install specific version of chromium if needed
+# Install specific version of chromium
 ################################################################################
 
 echo "Chromium, install v126"
