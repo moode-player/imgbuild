@@ -12,7 +12,7 @@ echo "Installing cloudsmith repository"
 
 curl -1sLf \
 'https://dl.cloudsmith.io/public/moodeaudio/m8y/setup.deb.sh' \
-| sudo -E distro=raspbian codename=trixie component=unstable bash
+| sudo -E distro=raspbian codename=trixie component=main bash
 
 echo "Update package lists"
 apt-get update
