@@ -33,6 +33,8 @@ apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSI
 
 ################################################################################
 # Install specific version of chromium
+# Note: Versions > v130 exhibit issue wherer scrollbars don't auto-hide
+# Tested up to v142 trixie
 ################################################################################
 
 echo "Chromium, install v126"
