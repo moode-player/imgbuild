@@ -50,6 +50,6 @@ apt-mark hold chromium chromium-common chromium-l10n chromium-sandbox rpi-chromi
 ################################################################################
 
 echo "Caps, install 0.9.26-1moode1"
-apt-get -y install caps=0.9.26-1moode1
+apt-get -y install caps=0.9.26-1moode1 --allow-downgrades
 echo "Caps, apply package hold"
 apt-mark hold caps
