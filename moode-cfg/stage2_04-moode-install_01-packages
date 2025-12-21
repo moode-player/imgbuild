@@ -30,8 +30,8 @@ fonts-unfonts-core
 fonts-lato
 id3v2
 inotify-tools
-libasound2-plugin-bluez
-libasound2-plugin-equal
+#libasound2-plugin-bluez # moved to stage 3 to prevent wrong caps installed
+#libasound2-plugin-equal # moved to stage 3 to prevent wrong caps installed
 libatasmart4
 libbs2b0
 libconfuse-dev

@@ -44,12 +44,3 @@ apt-get -y autoremove
 echo "Chromium, apply package holds"
 apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
 apt-mark hold chromium chromium-common chromium-l10n chromium-sandbox rpi-chromium-mods
-
-################################################################################
-# Install specific version of caps
-################################################################################
-
-echo "Caps, install 0.9.26-1moode1"
-apt-get -y install caps=0.9.26-1moode1 --allow-downgrades
-echo "Caps, apply package hold"
-apt-mark hold caps
