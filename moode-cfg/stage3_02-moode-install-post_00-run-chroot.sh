@@ -32,6 +32,14 @@ echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
 apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
+# Patch initramfs.conf
+# This allows apt upgrade kernel installs to succeed when the parameter
+# auto_initramfs=1 is not in /boot/firmware/config.txt
+################################################################################
+
+sed -i 's/^MODULES.*/MODULES=most/' /etc/initramfs-tools/initramfs.conf
+
+################################################################################
 # Install specific version of chromium
 # Note: Versions > v130 exhibit issue wherer scrollbars don't auto-hide
 # Tested up to v142 trixie
