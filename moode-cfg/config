@@ -2,7 +2,7 @@
 # Base config
 ################################################################################
 
-IMG_NAME=moode-r1010
+IMG_NAME=moode-r1011
 RELEASE=trixie
 DEPLOY_ZIP=1
 LOCALE_DEFAULT=en_US.UTF-8
