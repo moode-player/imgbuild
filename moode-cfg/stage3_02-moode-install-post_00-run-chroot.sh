@@ -28,8 +28,11 @@ KERNEL_PKG_VERSION=`dpkg-query --showformat='${Version}' --show $KERNEL_PACKAGE`
 KERNEL_VERSION_PKG_SMALL=$(echo $KERNEL_PKG_VERSION | sed -r "s/[0-9]:([0-9][.][0-9]{1,2}[.][0-9]{1,3})[-].*/\1/")
 
 # Driver install
-echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
-apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
+# NOTE: Kernel 6.18.29 released on 2026-05-10
+# - Contains pcm1794a driver w/384K support so no need for custom patch
+# - Driver rtl88xxau won't build so dropped since its only there for old Comfast CF-912AC WiFi adapter
+#echo "Kernel $KERNEL_VERSION_PKG_SMALL detected, try to install drivers"
+#apt-get install -y "pcm1794a-$KERNEL_VERSION_PKG_SMALL" "rtl88xxau-$KERNEL_VERSION_PKG_SMALL"
 
 ################################################################################
 # Install specific version of chromium
