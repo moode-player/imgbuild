@@ -31,6 +31,8 @@ fonts-lato
 id3v2
 inotify-tools
 jq
+# libasound2-data
+# libasound2t64
 libasound2-plugin-bluez
 libasound2-plugin-equal
 libatasmart4
