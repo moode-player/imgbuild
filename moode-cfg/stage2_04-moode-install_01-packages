@@ -45,7 +45,6 @@ libgudev-1.0-0
 libmediainfo0v5
 libmms0
 libnss-winbind
-# librespot
 # libsgutils2-1.48 (Note: dep is in moode-player build.sh)
 libtool-bin
 libzen0v5
@@ -82,7 +81,6 @@ python3-rpi.gpio
 python3-setuptools
 rpi-update
 samba
-# shairport-sync
 # shairport-sync-metadata-reader
 shellinabox
 smbclient
