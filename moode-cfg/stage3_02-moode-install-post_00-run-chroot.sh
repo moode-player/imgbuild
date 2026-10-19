@@ -58,3 +58,15 @@ apt -y install \
 	--allow-downgrades
 echo "Libasound: apply package hold"
 apt-mark hold libasound2-dev libasound2-data libasound2t64
+
+################################################################################
+# Install Rust toolchain for the on-demand renderer builds
+# - Version must match RUSTC_PIN_VERSION in pkgbuild rbl_check_cargo()
+################################################################################
+echo "Rust: install cargo+rust 1.96.0"
+export HOME=/root
+export RUSTUP_UNPACK_RAM=94371840; export RUSTUP_IO_THREADS=1
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain=1.96.0 -y
+echo "Rust: install cargo-deb"
+/root/.cargo/bin/cargo install cargo-deb
+rm -rf /root/.cargo/registry
