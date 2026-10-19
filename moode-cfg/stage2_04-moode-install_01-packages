@@ -28,6 +28,7 @@ fonts-ipafont-mincho
 fonts-unfonts-core
 fonts-unfonts-core
 fonts-lato
+git
 id3v2
 inotify-tools
 jq
