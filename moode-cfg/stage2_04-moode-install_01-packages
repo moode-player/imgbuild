@@ -82,7 +82,12 @@ python3-rpi.gpio
 python3-setuptools
 rpi-update
 samba
+# shairport-sync
 # shairport-sync-metadata-reader
+libplist-utils
+libmosquitto1
+libconfig11
+#
 shellinabox
 smbclient
 sox
