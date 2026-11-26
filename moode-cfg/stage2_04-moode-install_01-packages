@@ -66,6 +66,7 @@ php-sqlite3
 php-yaml
 php8.4
 pi-bluetooth
+plymouth
 # peppy-alsa
 # peppy-meter
 # peppy-spectrum
