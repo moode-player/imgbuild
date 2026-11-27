@@ -24,18 +24,21 @@ KERNEL_VERSION_PKG_SMALL=$(echo $KERNEL_PKG_VERSION | sed -r "s/[0-9]:([0-9][.][
 # Install chromium
 # Note: Versions > v130 have issue where scrollbars don't auto-hide
 # Tested up to v142 trixie
+#
+# Updated 2026-11-27
+# No issues with stock chromium v156
 ################################################################################
-echo "Chromium: install v126"
-apt-get -y install \
-	chromium-browser=126.0.6478.164-rpt1 \
-	chromium-browser-l10n=126.0.6478.164-rpt1 \
-	chromium-codecs-ffmpeg-extra=126.0.6478.164-rpt1 \
-	--allow-downgrades
-apt-get -y purge chromium chromium-common chromium-l10n chromium-sandbox rpi-chromium-mods
-apt-get -y autoremove
-echo "Chromium: apply package holds"
-apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
-apt-mark hold chromium chromium-common chromium-l10n chromium-sandbox rpi-chromium-mods
+#echo "Chromium: install v126"
+#apt-get -y install \
+#	chromium-browser=126.0.6478.164-rpt1 \
+#	chromium-browser-l10n=126.0.6478.164-rpt1 \
+#	chromium-codecs-ffmpeg-extra=126.0.6478.164-rpt1 \
+#	--allow-downgrades
+#apt-get -y purge chromium chromium-common chromium-l10n chromium-sandbox rpi-chromium-mods
+#apt-get -y autoremove
+#echo "Chromium: apply package holds"
+#apt-mark hold chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
+#apt-mark hold chromium chromium-common chromium-l10n chromium-sandbox rpi-chromium-mods
 
 ################################################################################
 # Install caps
